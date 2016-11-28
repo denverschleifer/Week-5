@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<script type="text/javascript">
+		//1
+		var num1 = Number(prompt("Enter number 1."));
+		var num2 = Number(prompt("Enter number 2."));
+
+		document.write("num1 = " + num1 + ", num2 = " + num2);
+		document.write("<br>");
+		document.write("num1 & num2 = " + bitwiseAnd(num1, num2));
+		document.write("<br>");
+
+		document.write("<br>");
+		document.write("num1 | num2 = " + bitwiseOr(num1, num2));
+		document.write("<br>");
+
+		document.write("<br>");
+		document.write("num1 ^ num2 = " + bitwiseXor(num1, num2));
+		document.write("<br>");
+
+		document.write("<br>");
+		document.write("num1 << num2 = " + bitwiseLeft(num1, num2));
+		document.write("<br>");
+
+		document.write("<br>");
+		document.write("num1 >> num2 = " + bitwiseRight(num1, num2));
+		document.write("<br>");
+
+		function bitwiseAnd(x, y) {
+			return x & y;
+		}
+
+		function bitwiseOr(x, y) {
+			return x | y;
+		}
+
+		function bitwiseXor(x, y) {
+			return x ^ y;
+		}
+
+		function bitwiseLeft(x, y) {
+			return x << y;
+		}
+
+		function bitwiseRight(x, y) {
+			return x >> y;
+		}
+
+		//2
+		document.write("<br>");
+
+		var text = prompt("Enter first string");
+		var subStr = prompt("Enter second string");
+
+		document.write(removeSubString(text, subStr));
+
+		function removeSubString(text, subStr) {
+			return text.split(subStr).join("");
+		}
+
+		//3
+		document.write("<br>");
+
+		var number = parseInt(prompt("What is your favorite number?"), 10);
+		var name = 'I am awesome!';
+
+		for (var i = 0; i < number; i++) {
+			document.write(name);
+			document.write('<br/>');
+		}
+
+		//4
+		document.write("<br>");
+
+		var word = (prompt("Enter a word or number."));
+		var reverse = isItPal(word)
+
+		if (word === reverse) {
+			document.write("The word " + word + " in reverse is " + reverse + ". This word is a palidrome.");
+		} else {
+			document.write("The word " + word + " in reverse is " + reverse + ". This word is not a palidrome.");
+		}
+
+		function isItPal(x) {
+			return (x).split("").reverse().join("");
+		}
+
+		//5
+		document.write("<br>");
+
+		var numbers = [65, 100, 24];
+		numbers.sort(function (a, b) {
+			return a - b
+		});
+		document.write(numbers);
+
+		//6
+		document.write("<br>");
+		
+		var percentage = Number (prompt("What is the grade?"));
+		var letterGrade = getLetterGrade(percentage);
+		document.write(letterGrade);
+		
+		function getLetterGrade(percentage) {
+			var letterGrade = "";
+
+			
+			switch (true) {
+					
+			case (percentage <= 100 && percentage >= 90):
+				letterGrade = "A";
+				break;
+			case (percentage <= 89 && percentage >= 80):
+				letterGrade = "B";
+				break;
+			case (percentage <= 79 && percentage >= 70):
+				letterGrade = "C";
+				break;
+			case (percentage <= 69 && percentage >= 60):
+				letterGrade = "D";
+				break;
+			case (percentage <= 58 && percentage >= 50):
+				letterGrade = "F";
+				break;
+				
+			}
+
+			return letterGrade;
+		}
+
+	</script>
+	<noscript> Please enable JavaScript! </noscript>
+</body>
+
+</html>
